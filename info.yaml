@@ -1,0 +1,85 @@
+--- 
+# Tiny Tapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - tt_um_seven_segment_seconds.v
+    - decoder.v
+  top_module:  "tt_um_seven_segment_seconds"      # Put the name of your top module here, must start with "tt_um_". Make it unique by including your github username
+
+# How many tiles your design occupies? A single tile is about 167x108 uM.
+  tiles: "1x1"    # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2 or 8x2
+
+# Keep a track of the submission yaml
+yaml_version: 4
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Matt Venn"      # Your name
+  title:        "7 segment seconds (Verilog Demo)"      # Project title
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "Count up to 10, one second at a time."      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Uses a set of registers to divide the clock, and then some combinational logic
+      to convert from binary to decimal for the display.
+
+      Puts the bottom 8 bits of the counter on the bidirectional outputs.
+
+      With all the inputs set to 0, the internal 24 bit compare is set to 10,000,000. This means the
+      counter will increment by one each second.
+
+      If any inputs are non zero, then the input will be used as an bits 11 to 18 of the 24 bit compare register.
+      Example: setting the inputs to 00010000 will program 16384 into the compare register.
+      With a 10MHz clock the counter will increment ~610 times per second.
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      After reset, the counter should increase by one every second with a 10MHz input clock.
+      Experiment by changing the inputs to change the counting speed.
+
+# A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
+  inputs:               
+    - compare bit 11
+    - compare bit 12
+    - compare bit 13
+    - compare bit 14
+    - compare bit 15
+    - compare bit 16
+    - compare bit 17
+    - compare bit 18
+# A description of what the outputs do (e.g. status LED, SPI MISO, etc)
+  outputs:
+    - segment a
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - dot
+# A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
+  bidirectional:
+    - second counter bit 0
+    - second counter bit 1
+    - second counter bit 2
+    - second counter bit 3
+    - second counter bit 4
+    - second counter bit 5
+    - second counter bit 6
+    - second counter bit 7
+
+# The following fields are optional
+  tag:          "timer, test"      # comma separated list of tags: test, encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      "mattvenn"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     10000000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository (must be 512kb or less)

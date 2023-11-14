@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Fri Jul 21 10:59:05 2023
+[*]
+[dumpfile] "/home/matt/work/asic-workshop/shuttle-2309C/tt04-verilog-demo/src/tb.vcd"
+[dumpfile_mtime] "Fri Jul 21 10:58:31 2023"
+[dumpfile_size] 4298151
+[savefile] "/home/matt/work/asic-workshop/shuttle-2309C/tt04-verilog-demo/src/tb.gtkw"
+[timestart] 0
+[size] 2286 698
+[pos] -1 -1
+*-33.900002 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb.
+[sst_width] 343
+[signals_width] 414
+[sst_expanded] 1
+[sst_vpaned_height] 190
+@28
+tb.rst_n
+tb.clk
+@22
+tb.segments[6:0]
+tb.uio_out[7:0]
+tb.tt_um_seven_segment_seconds.compare[23:0]
+@28
+tb.tt_um_seven_segment_seconds.rst_n
+@22
+tb.ui_in[7:0]
+[pattern_trace] 1
+[pattern_trace] 0
