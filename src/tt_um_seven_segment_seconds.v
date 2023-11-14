@@ -12,19 +12,18 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
 );
 
     wire reset = ! rst_n;
-    wire [6:0] led_out;
-    assign uo_out[6:0] = led_out;
-    assign uo_out[7] = 1'b0;
+    wire [7:0] led_out;
+    //assign uo_out[7:0] = led_out;
+    
 
     // use bidirectionals as outputs
     assign uio_oe = 8'b11111111;
 
     // put bottom 8 bits of second counter out on the bidirectional gpio
-    assign uio_out = second_counter[7:0];
+    assign uio_out = A[7:0];
 
     // external clock is 10MHz, so need 24 bit counter
-    reg [23:0] second_counter;
-    reg [3:0] digit;
+    reg [7:0] A;
 
     // if external inputs are set then use that as compare count
     // otherwise use the hard coded MAX_COUNT
@@ -33,24 +32,11 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
     always @(posedge clk) begin
         // if reset, set counter to 0
         if (reset) begin
-            second_counter <= 0;
-            digit <= 0;
+            A <= 0;
+     
         end else begin
-            // if up to 16e6
-            if (second_counter == compare) begin
-                // reset
-                second_counter <= 0;
-
-                // increment digit
-                digit <= digit + 1'b1;
-
-                // only count from 0 to 9
-                if (digit == 9)
-                    digit <= 0;
-
-            end else
-                // increment counter
-                second_counter <= second_counter + 1'b1;
+             A<=1;
+      
         end
     end
 
