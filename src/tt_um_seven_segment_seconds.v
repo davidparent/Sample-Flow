@@ -34,13 +34,11 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
         // if reset, set counter to 0
         if (reset) begin
             A <= 0;
-     
         end else begin
-            A<=A+ui_in/4+(A/8)*(A/8);
-      
+            if (A>=50) begin
+                A<=0;
+            end else begin
+                A<=A+ui_in/4+(A/8)*(A/8);
         end
     end
-
-
-
 endmodule
