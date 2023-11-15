@@ -12,7 +12,7 @@ module tt_um_seven_segment_seconds  (
     input  wire       rst_n     // reset_n - low to reset
 );
     wire reset = ! rst_n;
-    wire [7:0] in;
+    wire [7:0] in; 
     assign in[7:0] = ui_in[7:0];
     wire [7:0] out;
     assign uo_out[7:0] = out[7:0];
