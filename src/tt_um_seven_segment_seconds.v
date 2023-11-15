@@ -14,7 +14,7 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
     
     wire reset = ! rst_n;
     wire [7:0] led_out;
-    assign uo_out[7:0] = A[7:0];
+    //assign uo_out[7:0] = A[7:0];
     
 
     // use bidirectionals as outputs
@@ -30,9 +30,9 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
     // otherwise use the hard coded MAX_COUNT
     QIF_8B  neuron (
        .clk(clk),
-       .rst_n(rst_n),
+       .rst_n(reset),
        .I_syn(ui_in),
-       .V_mem(A)
+       .V_mem(uio_out)
      );
 
     //always @(posedge clk) begin
