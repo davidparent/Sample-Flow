@@ -29,8 +29,8 @@ module tt_um_seven_segment_seconds  (
    
   
     decoder  decoder (
-        .clk (CLK),
-        .rst_n (RS),
+        .clk (clk),
+        .rst_n (rst_n),
         .I_syn (in[7:0]),
        .V_mem (out[7:0])
      );
