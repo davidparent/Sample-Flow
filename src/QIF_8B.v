@@ -4,7 +4,7 @@ module QIF_8B (
   input   wire [7:0] I_syn,     // Input B (8-bit, signed)
   output  wire [7:0] V_mem     // Output voltage V (8-bit, signed) 
 );
-  #wire reset = ! rst_n;
+  //wire reset = ! rst_n;
   reg [7:0] A;  
   assign V_mem = A;
   always @(posedge clk) begin
