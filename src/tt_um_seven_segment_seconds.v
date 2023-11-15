@@ -13,10 +13,10 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
 
  
     QIF_8B  neuron (
-       .clk(clk),
-       .rst_n(rst_n),
-       .I_syn(ui_in),
-       .V_mem(uio_out)
+       .clk (clk),
+       .rst_n (rst_n),
+       .I_syn (ui_in),
+       .V_mem (uio_out)
      );
 
 
