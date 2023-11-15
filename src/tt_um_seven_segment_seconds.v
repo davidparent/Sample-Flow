@@ -40,5 +40,6 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
             end else begin
                 A<=A+ui_in/4+(A/8)*(A/8);
         end
+        end
     end
 endmodule
