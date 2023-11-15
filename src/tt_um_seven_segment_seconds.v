@@ -13,7 +13,7 @@ module tt_um_seven_segment_seconds  (
 );
     wire reset = ! rst_n;
     wire [7:0] in;
-    assign ui_in[7:0] = in[7:0];
+    assign in[7:0] = ui_in[7:0];
     wire [7:0] out;
     assign uo_out[7:0] = out[7:0];
     //assign uio_oe = 8'b11111111;
