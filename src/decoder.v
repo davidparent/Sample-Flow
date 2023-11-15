@@ -7,7 +7,7 @@ module decoder (
   
   wire reset = ! rst_n;
   reg [7:0] A;  
-  assign V_mem =I_syn;
+  
   always @(posedge clk  or posedge rst_n) begin
           
         if (rst_n) begin
