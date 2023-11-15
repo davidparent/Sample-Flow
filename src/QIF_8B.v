@@ -1,13 +1,10 @@
 module QIF_8B (
-  input  clk,          // Clock input
-  input  rst_n,       // Reset input
-  input   I_syn,     // Input B (8-bit, signed)
-  output   V_mem     // Output voltage V (8-bit, signed) 
+  input wire clk,          // Clock input
+  input  wire rst_n,       // Reset input
+  input  wire [7:0] I_syn,     // Input B (8-bit, signed)
+  output  wire [7:0] V_mem     // Output voltage V (8-bit, signed) 
 );
-  input clk;
-  input rst_n;
-  input [7:0] I_syn;
-  output [7:0] V_mem;
+  
   //wire reset = ! rst_n;
   //reg [7:0] A;  
   assign V_mem =I_syn;
