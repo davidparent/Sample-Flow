@@ -9,7 +9,7 @@ module decoder (
   reg [7:0] A;  
   assign V_mem =I_syn;
   always @(posedge clk  or posedge rst_n) begin
-         if reset, set counter to 0
+          
         if (rst_n) begin
             A <= 0;
        end else begin
