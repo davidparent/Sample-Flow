@@ -5,9 +5,9 @@ module decoder (
   output  wire [7:0] V_mem     // Output voltage V (8-bit, signed) 
 );
   
-  wire reset = ! rst_n;
+   
   reg [7:0] A;  
-  
+  assign V_mem=A;
   always @(posedge clk  or posedge rst_n) begin
           
         if (rst_n) begin
