@@ -6,7 +6,7 @@ module QIF_8B (
 );
   //wire reset = ! rst_n;
   //reg [7:0] A;  
-  assign V_mem = I_syn;
+  assign V_mem = 8'sd10;
   //always @(posedge clk  or posedge rst_n) begin
         // if reset, set counter to 0
        // if (rst_n) begin
