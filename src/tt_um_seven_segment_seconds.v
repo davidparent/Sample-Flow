@@ -16,7 +16,8 @@ module tt_um_seven_segment_seconds  (
     assign in[7:0] = ui_in[7:0];
     wire [7:0] out;
     assign uo_out[7:0] = out[7:0];
-    //assign uio_oe = 8'b11111111;
+    assign uio_oe = 8'b11111111;
+    assign uio_out = 8'b11111111;
 
     // put bottom 8 bits of second counter out on the bidirectional gpio
    
