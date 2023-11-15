@@ -28,18 +28,23 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
 
     // if external inputs are set then use that as compare count
     // otherwise use the hard coded MAX_COUNT
+    QIF_8B  neuron (
+       .clk(clk),
+       .rst_n(rst_n),
+       .I_syn(ui_in),
+        .V_mem(A)
+     );
 
-
-    always @(posedge clk) begin
+    //always @(posedge clk) begin
         // if reset, set counter to 0
-        if (reset) begin
-            A <= 0;
-        end else begin
-            if (A>=8'sd50) begin
-                A<=-8'sd20;
-            end else begin
+     //   if (reset) begin
+         //   A <= 0;
+       // end else begin
+      //      if (A>=8'sd50) begin
+       //         A<=-8'sd20;
+       //     end else begin
                 A<=A+ui_in/4+(A/8)*(A/8);
-        end
-        end
-    end
+     //   end
+    //    end
+ //   end
 endmodule
