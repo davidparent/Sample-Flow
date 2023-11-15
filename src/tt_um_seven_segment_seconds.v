@@ -18,13 +18,19 @@ module tt_um_seven_segment_seconds  (
     assign uo_out[7:0] = out[7:0];
     assign uio_oe = 8'b11111111;
     assign uio_out = 8'b11111111;
+    wire CLK;
+    assign CLK=clk;
+    wire RS;
+    assign RS=rst_n;
+    wire recieve_ena;
+    assign recieve_ena=ena
 
     // put bottom 8 bits of second counter out on the bidirectional gpio
    
   
     decoder  decoder (
-       .clk (clk),
-       .rst_n (reset),
+        .clk (CLK),
+        .rst_n (RS),
         .I_syn (in[7:0]),
        .V_mem (out[7:0])
      );
