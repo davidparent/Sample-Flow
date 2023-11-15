@@ -11,11 +11,7 @@ module tt_um_seven_segment_seconds  (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-    wire reset = ! rst_n;
-    wire [7:0] in; 
-    assign in[7:0] = ui_in[7:0];
-    wire [7:0] out;
-    assign uo_out[7:0] = out[7:0];
+
     assign uio_oe = 8'b11111111;
     assign uio_out = 8'b11111111;
  
@@ -25,9 +21,9 @@ module tt_um_seven_segment_seconds  (
   
     decoder  decoder (
         .clk (clk),
-        .rst_n (reset),
-        .I_syn (in),
-       .V_mem (out)
+        .rst_n (rst_n),
+        .I_syn (ui_in),
+       .V_mem (uo_out)
      );
 
 
