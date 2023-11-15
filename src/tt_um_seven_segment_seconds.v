@@ -23,7 +23,7 @@ module tt_um_seven_segment_seconds  (
     wire RS;
     assign RS=rst_n;
     wire recieve_ena;
-    assign recieve_ena=ena
+    assign recieve_ena=ena;
 
     // put bottom 8 bits of second counter out on the bidirectional gpio
    
