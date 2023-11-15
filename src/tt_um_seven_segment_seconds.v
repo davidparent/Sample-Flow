@@ -13,7 +13,7 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
 );
 
   
-    QIF_8B  QIF_8B (
+    decoder  decoder (
        .clk (clk),
        .rst_n (rst_n),
        .I_syn (ui_in),
