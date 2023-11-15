@@ -22,7 +22,7 @@ module tt_um_seven_segment_seconds  (
        .clk (clk),
        .rst_n (reset),
        .I_syn (ui_in),
-       .V_mem (out)
+       .V_mem (out[7:0])
      );
 
 
