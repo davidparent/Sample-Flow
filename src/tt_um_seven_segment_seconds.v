@@ -1,4 +1,5 @@
 `default_nettype none
+`include "QIF_8B.v"
 
 module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
     input  wire [7:0] ui_in,    // Dedicated inputs - connected to the input switches
@@ -11,7 +12,7 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-    `include QIF_8B.v
+  
     QIF_8B  neuron (
        .clk (clk),
        .rst_n (rst_n),
