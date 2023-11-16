@@ -18,6 +18,8 @@ module tt_um_seven_segment_seconds  (
     wire [7:0] connect2;
     wire [7:0] connect3;
     wire [7:0] connect4;
+    wire [7:0] connect5;
+    wire [7:0] connect6;
     
 
     // put bottom 8 bits of second counter out on the bidirectional gpio
@@ -51,6 +53,18 @@ module tt_um_seven_segment_seconds  (
         .clk (clk),
         .rst_n (rst_n),
         .I_syn (connect4),
+        .V_mem (connect5)
+     );
+    decoder  decoder6 (
+        .clk (clk),
+        .rst_n (rst_n),
+        .I_syn (connect5),
+        .V_mem (connect6)
+     );
+    decoder  decoder7 (
+        .clk (clk),
+        .rst_n (rst_n),
+        .I_syn (connect6),
        .V_mem (uo_out)
      );
     
