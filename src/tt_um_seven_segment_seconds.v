@@ -67,5 +67,5 @@ module tt_um_seven_segment_seconds  (
         .I_syn (connect6),
        .V_mem (uo_out)
      );
-  uo_out
+  
 endmodule
